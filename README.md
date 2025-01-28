@@ -78,6 +78,21 @@ Now, update your `board.overlay` adding the necessary bits (update the pins for 
         // snipe-layers = <1>;
         // scroll-layers = <2 3>;
         // automouse-layer = <4>;
+
+        /*   optional: ball action on specific layers  */
+        // arrows {
+        //     layers = <3>;
+        //     bindings =
+        //         <&kp RIGHT_ARROW>,
+        //         <&kp LEFT_ARROW>,
+        //         <&kp UP_ARROW>,
+        //         <&kp DOWN_ARROW>;
+        //
+        //     /*   optional: ball action configuration  */
+        //     tick = <10>;
+        //     // wait-ms = <5>;
+        //     // tap-ms = <5>;
+        // };
     };
 };
 

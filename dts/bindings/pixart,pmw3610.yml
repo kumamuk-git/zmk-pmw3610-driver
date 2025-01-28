@@ -1,5 +1,5 @@
 description: |
-  Sensor driver for the pixart PMW3610 mouse sensor 
+  Sensor driver for the pixart PMW3610 mouse sensor
 
 compatible: "pixart,pmw3610"
 
@@ -18,3 +18,24 @@ properties:
   automouse-layer:
     type: int
     default: -1
+
+child-binding:
+  description: "Invoke behaviors when the track ball is moved on specific layers"
+  properties:
+    layers:
+      description: "Layers on which the behavior will be invoked"
+      type: array
+      required: true
+    bindings:
+      description: "Behaviors to be invoked"
+      type: phandle-array
+      required: true
+    tick:
+      description: "Required ticks to trigger a ball action. Higher values require more movement to trigger a ball action. If omitted, CONFIG_PMW3610_BALL_ACTION_TICK will be used."
+      type: int
+    wait-ms:
+      description: "Time to wait (in milliseconds) before triggering the next behavior binding. If omitted, it will be set to 0."
+      type: int
+    tap-ms:
+      description: "Time to wait (in milliseconds) between the press and release events on a triggered behavior binding. If omitted, it will be set to 0."
+      type: int
